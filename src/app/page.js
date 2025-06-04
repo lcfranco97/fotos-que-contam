@@ -8,7 +8,7 @@ import { useState } from "react";
 
 
 export default function Home() {
-  const POSTS_PER_PAGE = 2;
+  const POSTS_PER_PAGE = 5;
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
@@ -23,9 +23,9 @@ export default function Home() {
         <div className="">
           
 
-          <div className=" max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row">
+          <div className="h-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row">
             <div className="mt-10">
-                <div className="grid grid-cols-1 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 gap-6">
                   {paginatedPosts.map((post) => (
                     <PostCard key={post.id}
                     post={post}
@@ -34,7 +34,7 @@ export default function Home() {
                 </div>
             </div>
             
-            <div className="h-svh hidden md:block md:w-64 mt-4 mr-14 p-4 ml-8">
+            <div className="h-svh hidden md:block md:w-64 mt-4 mr-14 p-4 ml-8 ">
               <Sidebar />
             </div>
                 
@@ -46,7 +46,7 @@ export default function Home() {
               />  
             </div>     
 
-              <div className="block md:hidden mt-8 mb-4">
+              <div className="block md:hidden mt-8 mb-4 text-xl">
                 <Sidebar />
               </div>
               

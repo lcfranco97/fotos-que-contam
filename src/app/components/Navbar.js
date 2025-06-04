@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
      
@@ -18,7 +19,17 @@ export default function Navbar() {
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
                                 <Link href={"/"} className="text-white text-lg font-bold"
-                                >Logo</Link>
+                                >
+                                    <Image 
+                                    src={"/fqc-logo-white.png"}
+                                    alt="FQC Logo"
+                                    width={80}
+                                    height={120}
+                                    priority
+                                    style={{ height: 'auto', width: 'auto' }}
+                                    className=""
+                                    />
+                                </Link>
                             </div>
                         </div>
                         {/*Menu desktop */}

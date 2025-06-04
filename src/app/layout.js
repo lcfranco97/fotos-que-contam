@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Fotos que contam",
   description: "Fotos que contam",
+  icons: {
+    icon: '/ft-ico.png',
+  }
 };
 
 export default function RootLayout({ children }) {

@@ -7,7 +7,7 @@ const PostCard = ({ post }) => {
     if(!post) return null;
 
     return (
-        <motion.div className="flex flex-col mb-16 mt-4 " whileHover={{
+        <motion.div className="flex flex-col mb-16 mt-4" whileHover={{
           scale: 1.1,
           transition: {
             duration: .2
@@ -28,16 +28,16 @@ const PostCard = ({ post }) => {
             <Link href={`/posts/${post.slug}`}>
                 <Image src={post.image} 
                 alt={post.title}
-                width={800}
-                height={500}
+                width={700}
+                height={400}
                 
                 priority
-                style={{ height: 'auto' }}
-                className="hover:cursor-pointer" />
+                style={{ height: 'auto', width: 'auto' }}
+                className="hover:cursor-pointer rounded" />
             </Link>
             
 
-            <div className="p-4 flex flex-col justify-between shadow-md mt-6">
+            <div className="p-4 flex flex-col justify-between shadow-md mt-6 hover:cursor-pointer rounded-lg">
                 <motion.div>
                     <h2 className="text-3xl font-semibold hover:cursor-pointer
                     hover:text-red-500"><Link href={`/posts/${post.slug}`}>{post.title}</Link></h2>

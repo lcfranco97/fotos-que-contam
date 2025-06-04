@@ -40,7 +40,7 @@ export default function Category({ name, slug, image, summary, posts = [] }) {
                 </div>
 
                 <h2 className="text-2xl font-semibold mb-4">Fotos históricas</h2>
-                <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 hover:cursor-pointer">
                   {posts.map((post) => (
                     <motion.div key={post.id}
                      whileHover={{
