@@ -1,5 +1,6 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import ScrollToTop from "./ScrollToTop.jsx";
 
 const Pagination = ({currentPage, totalPages, onPageChange}) => {
     
@@ -44,7 +45,7 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
                 className="px-2 py-1 border rounded fo hover:bg-black hover:text-white hover:cursor-pointer disabled:opacity-40 font-semibold"
             >Última</button>
 
-            
+           
 
         </div>
         

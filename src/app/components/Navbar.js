@@ -23,11 +23,12 @@ export default function Navbar() {
                                     <Image 
                                     src={"/fqc-logo-white.png"}
                                     alt="FQC Logo"
-                                    width={80}
-                                    height={120}
+                                    width={70}
+                                    height={100}
                                     priority
-                                    style={{ height: 'auto', width: 'auto' }}
-                                    className=""
+                                    
+                                    style={{ height: '50px', width: 'auto' }}
+                                    className="object-contain sm:h-auto md:h-auto"
                                     />
                                 </Link>
                             </div>

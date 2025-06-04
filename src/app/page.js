@@ -4,6 +4,7 @@ import { posts } from "./data/posts.js";
 import Sidebar from "./components/Sidebar.js";
 import Pagination from "./components/Pagination.js";
 import { useState } from "react";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 
 
@@ -22,7 +23,7 @@ export default function Home() {
 
         <div className="">
           
-
+          <ScrollToTop />
           <div className="h-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row">
             <div className="mt-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 gap-6">
