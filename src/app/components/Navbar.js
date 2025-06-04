@@ -43,7 +43,7 @@ export default function Navbar() {
                                 hover:text-black rounded-lg px-3 py-2">Sobre</Link>
 
                                 <Link href={"/topicos"} className="text-white hover:bg-white
-                                hover:text-black rounded-lg px-3 py-2">Tópicos</Link>
+                                hover:text-black rounded-lg px-3 py-2">Categorias</Link>
                             
                         </div>
                         <div className="md:hidden flex items-center">
@@ -91,7 +91,7 @@ export default function Navbar() {
                                 hover:text-black rounded-lg p-2">Sobre</Link>
 
                                 <Link href={"/topicos"} className="text-white block hover:bg-white
-                                hover:text-black rounded-lg p-2">Tópicos</Link>
+                                hover:text-black rounded-lg p-2">Categorias</Link>
                         </div>   
                     </div>
                 )}

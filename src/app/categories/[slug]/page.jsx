@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 };
 
 export default async function CategoryPage({ params }) {
-    const { slug } = params;
+    const { slug } = await params;
 
     const category = categories.find(cat => cat.slug === slug);
 

@@ -2,12 +2,6 @@
 import Sidebar from "../components/Sidebar";
 import { motion } from "framer-motion";
 
-
-export const metadados = {
-    title: "Página sobre",
-    description: "Página de sobre",
-}
-
 export default function Sobre() {
     return (
 

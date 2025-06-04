@@ -15,10 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Fotos que contam",
+  title: {
+    default: 'Fotos que contam',
+    template: '%s | Fotos que contam'
+  },
   description: "Fotos que contam",
   icons: {
-    icon: '/ft-ico.png',
+    icon: '/ico-fqc.svg',
   }
 };
 
