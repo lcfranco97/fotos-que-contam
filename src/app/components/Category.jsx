@@ -60,7 +60,7 @@ export default function Category({ name, slug, image, summary, posts = [] }) {
                       />
                      </Link>
                       <div className="p-4">
-                        <h3 className="text-lg font-bold">{post.title}</h3>
+                        <h3 className="text-lg font-bold mb-2">{post.title}</h3>
                         <p className="text-gray-600 text-sm">{post.summary}</p>
                       </div>
                     </motion.div>
