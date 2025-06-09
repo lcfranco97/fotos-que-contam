@@ -13,6 +13,8 @@ export default function PageTransition({ children }) {
                 animate={{ opacity: 1}}
                 exit={{ opacity: 0}}
                 transition={{ duration: 0.4 }}
+               
+                className="w-full max-w-full overflow-x-hidden"
                 >
                     {children}
                 </motion.div>

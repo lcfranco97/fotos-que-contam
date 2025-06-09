@@ -18,7 +18,7 @@ export default function ArticleCategory({
 
     return (
 
-        <motion.div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-4" initial="hidden" animate="visible" variants={{
+        <motion.div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-4 overflow-x-hidden" initial="hidden" animate="visible" variants={{
             hidden: {
                 scale: .8,
                 opacity: 0
@@ -32,7 +32,7 @@ export default function ArticleCategory({
             }
         }} >
 
-            <article className="max-w-3xl mx-auto p-4">
+            <article className="w-full md:w-2/3 lg:w-3/4 xl:w-4/5 p-2 sm:p-4">
                 <h1 className="text-3xl font-bold mb-2">{title}</h1>
                 <p className="text-sm text-gray-500 mb-4">{date}</p>
 
@@ -43,8 +43,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-4 shadow"
+                        
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
                         />
                 )}
                 <div className="flex justify-center">
@@ -64,8 +64,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                        
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -87,8 +87,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                        
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -110,8 +110,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                        
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -134,8 +134,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                        
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -157,8 +157,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                        
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -181,8 +181,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                        
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -205,8 +205,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                       
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -229,8 +229,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                        
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -253,8 +253,8 @@ export default function ArticleCategory({
                         width={800}
                         height={500}
                         priority
-                        style={{ height: 'auto', width: '800px' }}
-                        className="rounded mb-6 shadow"
+                        
+                        className="rounded mb-6 shadow w-full h-auto max-w-full"
                     />
                 )}
 
@@ -296,7 +296,7 @@ export default function ArticleCategory({
             </article>
 
 
-            <div className="h-svh hidden md:block md:w-64 mt-10 mr-14 p-4 ml-8">
+            <div className="hidden md:block md:w-1/3 lg:w-1/4 xl:w-1/5 mt-10 p-2">
                 <Sidebar />
             </div>
 

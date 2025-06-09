@@ -34,7 +34,7 @@ export default function Navbar() {
                             </div>
                         </div>
                         {/*Menu desktop */}
-                        <div className="hidden md:flex items-center space-x-4">
+                        <div className="hidden md:flex items-center  space-x-4">
                             
                                 <Link href={"/"} className="text-white hover:bg-white
                                 hover:text-black rounded-lg px-3 py-2">Home</Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
                 </div>
                 {/*Menu mobile */}
                 {isClick && (
-                    <div className="md:hidden absolute top-16 left-0 w-full bg-black z-50">
+                    <div className="md:hidden absolute top-16 left-0  bg-black z-50">
                         <div className="px-2 pt-2 pb-3 space-y-2">
                              <Link href={"/"} className="text-white block hover:bg-white
                                 hover:text-black rounded-lg p-2">Home</Link>
