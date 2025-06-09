@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { categories } from "../data/categories.js";
-import { AiOutlineDoubleRight } from "react-icons/ai";
+
 
 
 

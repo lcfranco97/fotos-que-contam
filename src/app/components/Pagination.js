@@ -1,6 +1,6 @@
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import ScrollToTop from "./ScrollToTop.jsx";
+
 
 const Pagination = ({currentPage, totalPages, onPageChange}) => {
     
