@@ -43,7 +43,7 @@ import Link from "next/link";
             </motion.div>
 
 
-            <div className="p-4 flex flex-col justify-between shadow-md mt-6 hover:cursor-pointer rounded-lg">
+            <div className="bg-white p-4 flex flex-col justify-between shadow-md mt-6 hover:cursor-pointer rounded-lg">
                 
                     <h2 className="text-3xl font-semibold hover:cursor-pointer hover:text-red-500"><Link href={`/categories/${category.slug}`}>{category.name}</Link></h2>
                     <p className="text-sm text-gray-600 mb-2 mt-2">{category.summary}</p>
