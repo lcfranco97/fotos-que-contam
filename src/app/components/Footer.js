@@ -11,7 +11,9 @@ export default function Footer() {
             <div className="hidden w-full md:flex items-center justify-around bg-black py-40">
 
                 <div className="px-10">
-                    <h2 className="text-white text-5xl font-bold mb-4">FOTOS QUE CONTAM</h2>
+                    <Link href="/">
+                        <h2 className="text-white text-5xl font-bold mb-4">FOTOS QUE CONTAM</h2>
+                    </Link>
                     <div className="flex gap-4">
                         <FaInstagram size={50} className="text-white cursor-pointer"/>
                         <AiFillFacebook size={50} className="text-white cursor-pointer"/>
