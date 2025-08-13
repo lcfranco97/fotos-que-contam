@@ -1,4 +1,6 @@
- export const categories = [
+ import { posts } from "./posts";
+ 
+export const categories = [
     {
     id: 1,
     name: "Brasil",
@@ -208,4 +210,19 @@
     },
 
     
-];
+].map(category => {
+    //posts vindos do arquivo posts.js que tenham categorySlug igual ao slug da categoria
+    const postsFromPostsJS = posts.filter(post => post.categorySlug === category.slug);
+    const existingPosts = category.posts || [];
+
+    //juntar sem duplicar (baseado em 'slug' quando disponível)
+    const merged = [
+        ...existingPosts,
+        ...postsFromPostsJS.filter(p => !existingPosts.some(e => e.slug === p.slug))
+    ];
+
+    return {
+        ...category,
+        posts: merged
+    };
+});

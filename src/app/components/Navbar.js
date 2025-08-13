@@ -2,103 +2,117 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import { ThemeToggle } from "./theme-switcher";
+import { Button } from "./ui/button";
+import { Menu, X } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
+import { AiFillFacebook } from "react-icons/ai";
 
 export default function Navbar() {
-     
-    const [isClick, setIsClick] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggleNavBar = () => {
-        setIsClick(!isClick);
-    }
-    
-    return (
-        <>
-            <nav className="bg-black relative">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-center justify-between h-16">
-                        <div className="flex items-center">
-                            <div className="flex-shrink-0">
-                                <Link href={"/"} className="text-white text-lg font-bold"
-                                >
-                                    <Image 
-                                    src={"/fqc-logo-white.png"}
-                                    alt="FQC Logo"
-                                    width={70}
-                                    height={100}
-                                    priority
-                                    
-                                    style={{ height: '50px', width: 'auto' }}
-                                    className="object-contain sm:h-auto md:h-auto"
-                                    />
-                                </Link>
-                            </div>
-                        </div>
-                        {/*Menu desktop */}
-                        <div className="hidden md:flex items-center  space-x-4">
-                            
-                                <Link href={"/"} className="text-white hover:bg-white
-                                hover:text-black rounded-lg px-3 py-2">Home</Link>
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
 
-                                <Link href={"/sobre"} className="text-white hover:bg-white
-                                hover:text-black rounded-lg px-3 py-2">Sobre</Link>
+  return (
+    <nav className="bg-black dark:bg-black fixed w-full top-0 z-50 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/">
+              <Image
+                src="/fqc-logo-white.png"
+                alt="FQC Logo"
+                width={70}
+                height={50}
+                priority
+                className="object-contain h-[50px] w-auto"
+              />
+            </Link>
+          </div>
 
-                                <Link href={"/topicos"} className="text-white hover:bg-white
-                                hover:text-black rounded-lg px-3 py-2">Categorias</Link>
-                            
-                        </div>
-                        <div className="md:hidden flex items-center">
-                            <button className="inline-flex items-center justify-center p-2 rounded-md text-white md:text-white hover:text-white focus:ou-none focus:ring-2 focus:ring-inset focus:ring-white"
-                            onClick={toggleNavBar}
-                            >
-                                {isClick ? (
-                                    <svg  className="h-6 w-6 hover:cursor-pointer"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor" >
-                                            <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                             strokeWidth={2}
-                                            d="M6 18L18 6M6 6l12 12"/>
-                                    </svg>
-                                
-                                ) : (
-                                     <svg  className="h-6 w-6 hover:cursor-pointer"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor">
-                                        <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 6h16M4 12h16m-7 6h7"/>
-                                </svg> 
-                                )}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                {/*Menu mobile */}
-                {isClick && (
-                    <div className="md:hidden absolute top-16 left-0  bg-black z-50">
-                        <div className="px-2 pt-2 pb-3 space-y-2">
-                             <Link href={"/"} className="text-white block hover:bg-white
-                                hover:text-black rounded-lg p-2">Home</Link>
+          {/* Menu Desktop */}
+          <div className="hidden md:flex items-center space-x-2 hover:cursor-pointer">
+            <Link
+              href="/"
+              className="text-white dark:text-gray-100 font-medium hover:bg-white hover:dark:bg-gray-700 hover:text-black hover:dark:text-white rounded-lg px-3 py-2 transition-colors duration-300"
+            >
+              Home
+            </Link>
+            <Link
+              href="/sobre"
+              className="text-white dark:text-gray-100 font-medium hover:bg-white hover:dark:bg-gray-700 hover:text-black hover:dark:text-white rounded-lg px-3 py-2 transition-colors duration-300"
+            >
+              Sobre
+            </Link>
+            <Link
+              href="/topicos"
+              className="text-white dark:text-gray-100 font-medium hover:bg-white hover:dark:bg-gray-700 hover:text-black hover:dark:text-white rounded-lg px-3 py-2 transition-colors duration-300"
+            >
+              Categorias
+            </Link>
+            
+            <ThemeToggle />
+          </div>
 
-                                <Link href={"/sobre"} className="text-white block hover:bg-white
-                                hover:text-black rounded-lg p-2">Sobre</Link>
+          {/* Menu Mobile Toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white hover:bg-white hover:text-black dark:hover:bg-gray-700 dark:hover:text-white"
+              onClick={toggleNavbar}
+            >
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+              <span className="sr-only">Abrir menu</span>
+            </Button>
+          </div>
+        </div>
+      </div>
 
-                                <Link href={"/topicos"} className="text-white block hover:bg-white
-                                hover:text-black rounded-lg p-2">Categorias</Link>
-                        </div>   
-                    </div>
-                )}
-            </nav>
-        
-        
-        
-        </>
-    );
+      {/* Menu Mobile */}
+      <div
+        className={`md:hidden bg-black dark:bg-gray-900 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-96 py-2" : "max-h-0 py-0"
+        }`}
+      >
+        <div className="px-4 flex flex-col items-center space-y-3">
+          <Link
+            href="/"
+            className="w-full text-center text-white dark:text-gray-100 font-medium hover:bg-white hover:dark:bg-gray-700 hover:text-black hover:dark:text-white rounded-lg px-3 py-2 transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            href="/sobre"
+            className="w-full text-center text-white dark:text-gray-100 font-medium hover:bg-white hover:dark:bg-gray-700 hover:text-black hover:dark:text-white rounded-lg px-3 py-2 transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Sobre
+          </Link>
+          <Link
+            href="/topicos"
+            className="w-full text-center text-white dark:text-gray-100 font-medium hover:bg-white hover:dark:bg-gray-700 hover:text-black hover:dark:text-white rounded-lg px-3 py-2 transition-colors duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            Categorias
+          </Link>
+
+          <div className="flex flex-row gap-2 mb-4">
+             <FaInstagram size={28} className="text-white"/>
+             <AiFillFacebook size={28} className="text-white"/>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  );
 }

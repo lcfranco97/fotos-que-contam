@@ -72,6 +72,7 @@ npm run dev
 
 ### 6. Acesse no navegador:
 ```bash
+
 http://localhost:3000
 ```
 

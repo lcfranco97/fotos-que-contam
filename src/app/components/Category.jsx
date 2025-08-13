@@ -40,7 +40,7 @@ export default function Category({ name, slug, image, summary, posts = [] }) {
                 <h2 className="text-2xl font-semibold mb-4">Fotos históricas</h2>
                 <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 hover:cursor-pointer">
                   {posts.map((post) => (
-                    <motion.div key={post.id}
+                    <motion.div key={`${post.slug}-${post.id}`}
                      whileHover={{
                       scale: 1.1,
                       transition: {
@@ -49,13 +49,13 @@ export default function Category({ name, slug, image, summary, posts = [] }) {
                      }}
                      className="bg-white shadow-md rounded-lg overflow-hidden">
                      <Link key={post.id} href={`/categories/${slug}/${post.slug}`}>
-                         <Image
+                        <Image
                         src={post.image}
                         alt={post.title}
                         width={400}
                         height={200}
                         className="w-full h-48 object-cover"
-                      />
+                        />
                      </Link>
                       <div className="p-4">
                         <h3 className="text-lg font-bold mb-2 hover:text-red-500">{post.title}</h3>

@@ -3,6 +3,7 @@ import "./globals.css";
 import MainCotainer from "./components/MainContainer";
 import ScrollToTop from "./components/ScrollToTop";
 import PageTransition from "./components/PageTransition";
+import { ThemeProvider } from "./components/theme-provider";
 
 
 const geistSans = Geist({
@@ -28,18 +29,21 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-200`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-200 dark:bg-black transition-colors duration-200`}
       >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+        >
           <PageTransition>
-              <MainCotainer>
-                <ScrollToTop />
-                {children}
-              </MainCotainer>
-        
+            <MainCotainer>
+              <ScrollToTop />
+              {children}
+            </MainCotainer>
           </PageTransition>
-        
+        </ThemeProvider>
       </body>
     </html>
   );

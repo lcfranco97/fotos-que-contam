@@ -6,6 +6,9 @@ import CommentForm from "./CommentForm";
 import CommentsList from "./CommentsList";
 import Link from "next/link";
 
+
+//COMPONENTE DA LISTA CATEGORIES.JS (PÁGINA DE ARTIGOS DINAMICOS)
+
 export default function ArticleCategory({ 
     title,
     image, image2, image3, image4, image5, image6, image7, image8, image9,image10,

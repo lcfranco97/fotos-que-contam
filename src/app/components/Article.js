@@ -5,11 +5,14 @@ import { motion } from "framer-motion";
 import CommentForm from "./CommentForm";
 import CommentsList from "./CommentsList";
 
-export default function Article({ title, date, slug, image, content, content2 }) {
+
+//COMPONENTE ARTIGOS DINAMICOS DA LISTA POSTS.JS (PAGINA HOME)
+
+export default function Article({ title, summary, date, slug, image, content, content2 }) {
      
     return (
 
-        <motion.div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-4" initial="hidden" animate="visible"
+        <motion.div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-26" initial="hidden" animate="visible"
         variants={{
             hidden: {
                 scale: .8,
@@ -24,8 +27,9 @@ export default function Article({ title, date, slug, image, content, content2 })
             }
         }} >
             <article className="max-w-3xl mx-auto p-4">
-                <h1 className="text-3xl font-bold mb-2">{title}</h1>
-                <p className="text-sm text-gray-500 mb-4">{date}</p>
+                <h1 className="text-4xl font-bold mb-2">{title}</h1>
+                <h3 className="text-md mb-4 dark:text-gray-300">{summary}</h3>
+                <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">{date}</p>
 
                 {image && (
                     <Image 
