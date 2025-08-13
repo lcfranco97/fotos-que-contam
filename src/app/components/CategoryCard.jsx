@@ -1,63 +1,57 @@
 'use client';
-
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-
- const CategoryCard = ({ category }) => {
+const CategoryCard = ({ category }) => {
     if (!category) return null;
 
     return (
-        <motion.div className="flex flex-col mb-16 mt-4"
-            initial="hidden" animate="visible" variants={{
-            hidden: {
-                scale: .8,
-                opacity: 0
-            },
-            visible: {
-                scale: 1,
-                opacity: 1,
-                transition: {
-                    delay: .4
-                }
-            }
-        }} >
+        <div className="group relative bg-white dark:bg-black border border-gray-300 dark:border-black rounded-lg flex flex-row w-full h-[200px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:cursor-pointer">
+            {/* Efeito de fundo vermelho que cresce */}
+            <div className="absolute inset-0 bg-red-800 opacity-0 group-hover:opacity-100 transition-all duration-500 origin-bottom transform scale-y-0 group-hover:scale-y-100 z-0"></div>
             
-            <motion.div whileHover={{
-                scale: 1.1,
-                transition: {
-                    duration: .2
-                }
-
-            }}>
-                <Link href={`/categories/${category.slug}`}>
-                    <Image src={category.image}
-                    alt={category.name}
-                    width={600}
-                    height={500}
-                    priority
-                    style={{ height: 'auto', width: 'auto' }}
-                    className="hover:cursor-pointer rounded" />
-                </Link>
-            </motion.div>
-
-
-            <div className="bg-white p-4 flex flex-col justify-between shadow-md mt-6 hover:cursor-pointer rounded-lg">
-                
-                <h2 className="text-3xl font-semibold hover:cursor-pointer hover:text-red-500"><Link href={`/categories/${category.slug}`}>{category.name}</Link></h2>
-                <p className="text-sm text-gray-600 mb-2 mt-2">{category.summary}</p>
-                
-
-                <div className="mt-10">
-                    <Link href={`/categories/${category.slug}`} className="text-black hover:underline text-sm lg:text-base hover:bg-black rounded-lg hover:text-white p-2">Leia mais →</Link>
-                </div>
+            {/* Container da imagem com efeito de zoom */}
+            <div className="relative z-10 w-1/3 h-full overflow-hidden">
+                <motion.div 
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-full h-full"
+                >
+                    <Link href={`/categories/${category.slug}`}>
+                        <Image 
+                            src={category.image}
+                            alt={category.name}
+                            width={600}
+                            height={400}
+                            priority
+                            className="w-full h-full object-cover hover:cursor-pointer"
+                        />
+                    </Link>
+                </motion.div>
             </div>
 
-
-
-
-        </motion.div>
+            {/* Conteúdo textual */}
+            <div className="relative z-10 w-2/3 p-4 flex flex-col justify-between">
+                <div>
+                    <h2 className="text-xl md:text-2xl font-semibold group-hover:text-white transition-colors duration-300">
+                        <Link href={`/categories/${category.slug}`}>{category.name}</Link>
+                    </h2>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 group-hover:text-white transition-colors duration-300 line-clamp-3">
+                        {category.summary}
+                    </p>
+                </div>
+                
+                <div className="mt-4">
+                    <Link 
+                        href={`/categories/${category.slug}`} 
+                        className="inline-block text-black dark:text-white hover:underline text-sm lg:text-base group-hover:text-white group-hover:no-underline transition-colors duration-300 px-3  "
+                    >
+                        Leia mais →
+                    </Link>
+                </div>
+            </div>
+        </div>
     );
 };
 
