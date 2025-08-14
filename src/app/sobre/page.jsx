@@ -7,7 +7,7 @@ export default function Sobre() {
 
 
 
-        <motion.div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-16  bg-white dark:bg-black" initial="hidden" animate="visible"
+        <motion.div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-16   dark:bg-black" initial="hidden" animate="visible"
         variants={{
             hidden: {
                 scale: .8,
@@ -22,7 +22,7 @@ export default function Sobre() {
             }
         }} >
             <article className="max-w-3xl mx-auto p-4">
-                <h1 className="text-4xl font-bold mb-10 mt-4">Sobre nós</h1>
+                <h1 className="text-4xl font-bold mb-10 mt-4">Sobre <strong className="text-red-800">nós</strong></h1>
 
                 <Image src="/fqc-about.png"
                     alt="Imagem sobre o Fatos que Contam"

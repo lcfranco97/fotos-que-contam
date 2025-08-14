@@ -3,6 +3,9 @@ import { categories } from "../data/categories";
 import CategoryCard from "../components/CategoryCard";
 import { motion } from "framer-motion";
 
+
+//PÁGINA DE CATEGORIAS
+
 export default function Categorias() {
   return (
     <motion.div 
@@ -25,7 +28,6 @@ export default function Categorias() {
           {categories.map((cat) => (
             <motion.div
               key={cat.id}
-              
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <div className="group relative h-full rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">

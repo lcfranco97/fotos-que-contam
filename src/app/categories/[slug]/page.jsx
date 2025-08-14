@@ -1,5 +1,6 @@
 import Category from "@/app/components/Category";
 import { categories } from "@/app/data/categories.js";
+import AllCategories from "@/app/components/AllCategories";
 
 
 export async function generateStaticParams() {
@@ -16,6 +17,12 @@ export default async function CategoryPage({ params }) {
     if (!category) return <div>Cateogria não encontrada</div>
 
     return (
-             <Category {...category} />
+             
+        <>
+            {/* Renderiza a categoria atual */}
+            <Category {...category} />
+            
+            
+        </>
     );
 }

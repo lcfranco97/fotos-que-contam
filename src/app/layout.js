@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lora } from "next/font/google";
 import "./globals.css";
 import MainCotainer from "./components/MainContainer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -16,6 +16,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora', //opcional
+  weight: ['400', '500', '600', '700'],
+})
+
 export const metadata = {
   title: {
     default: 'Fotos que contam',
@@ -31,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-200 dark:bg-black transition-colors duration-200`}
+        className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} antialiased bg-gray-100 dark:bg-black transition-colors duration-200`}
       >
         <ThemeProvider
           attribute="class"

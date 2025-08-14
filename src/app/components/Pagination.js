@@ -21,28 +21,28 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
         <div className="flex flex-wrap items-center justify-center gap-2 mt-8">
             <button onClick={() => onPageChange(1)}
                 disabled={currentPage === 1}
-                className="px-2 py-1 border rounded hover:bg-black hover:text-white hover:cursor-pointer disabled:opacity-40 font-semibold"
+                className="px-2 py-1 rounded hover:bg-black hover:text-white dark:text-red-800 hover:cursor-pointer disabled:opacity-40 font-semibold"
             >Primeira</button>
 
             <button onClick={() => onPageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="px-2 py-1 border rounded hover:bg-black hover:text-white hover:cursor-pointer"
+                className="px-2 py-1 rounded text-red-800 dark:text-white hover:bg-black hover:text-white hover:cursor-pointer"
             ><AiOutlineArrowLeft /></button>
 
             {pages.map((page) => (
                 <button key={page} onClick={() => onPageChange(page)}
-                    className={`px-3 border rounded hover:bg-black hover:text-white ${page === currentPage ? "bg-black text-white" : "bg-white text-black"}
+                    className={`cursor-pointer px-3 border rounded hover:bg-black hover:text-white ${page === currentPage ? "bg-black text-white" : "bg-white text-black"}
                     `} >{page}</button>     
             ))}
 
             <button onClick={() => onPageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="px-2 py-1 border rounded  hover:bg-black hover:text-white hover:cursor-pointer"
+                className="px-2 py-1  rounded text-red-800 dark:text-white  hover:bg-black hover:text-white hover:cursor-pointer"
             ><AiOutlineArrowRight /></button>
 
             <button onClick={() => onPageChange(totalPages)}
                 disabled={currentPage === totalPages}
-                className="px-2 py-1 border rounded fo hover:bg-black hover:text-white hover:cursor-pointer disabled:opacity-40 font-semibold"
+                className="px-2 py-1  rounded  hover:bg-black hover:text-white dark:text-red-800 hover:cursor-pointer disabled:opacity-40 font-semibold"
             >Última</button>
 
            

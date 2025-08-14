@@ -7,19 +7,13 @@ import { categories } from "../data/categories.js";
 
 
 
-const AllCategories = ({ currentCategorySlug }) => {
+const OthersCategoriesHome = () => {
     
-    //Filtra as categorias, excluindo a atual
-    const otherCategories = categories.filter(
-        cat => cat.slug !== currentCategorySlug
-    ).slice(0,4); 
-
-    const catego = categories.slice(1, 3);
+    const catego = categories.slice(3);
 
     return (
-        <div className="max-w-6xl mx-auto px-4">
-            <motion.div className="w-full h-fit mt-4 mb-20"
-            initial="hidden" animate="visible" variants={{
+        <motion.div className="w-full h-fit mt-4 mb-20 p-4"
+      initial="hidden" animate="visible" variants={{
             hidden: {
                 scale: .8,
                 opacity: 0
@@ -31,12 +25,12 @@ const AllCategories = ({ currentCategorySlug }) => {
                     delay: .4
                 }
             }
-            }}>
-            <h2 className="text-2xl dark:text-gray-400 font-semibold mb-6">Veja outras categorias</h2>
+        }}  >
+            <h2 className="text-2xl dark:text-gray-400 font-semibold mb-6">Explore outras categorias</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
                 
-                {otherCategories.map((cat) => (
+                {catego.map((cat) => (
                     <motion.div key={cat.slug} 
                     className=""
                     >
@@ -49,8 +43,7 @@ const AllCategories = ({ currentCategorySlug }) => {
             </div>
             
         </motion.div>
-        </div>
     );
 };
 
-export default AllCategories;
+export default OthersCategoriesHome;

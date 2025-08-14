@@ -164,7 +164,7 @@ export const categories = [
             slug: "ditadura-chinesa", date: "3 de Maio de 2025", content: "teste de artigo",
         },
 
-        {id: 3, title: "Guerra do opio", image:"https://static.significados.com.br/foto/smapa-da-china.jpg?width=1024",
+        {id: 3, title: "Guerra do opio", image:"https://static.significados.com.br/foto/mapa-da-china.jpg?width=1024",
             slug: "guerra-opio", date: "3 de Maio de 2025", content: "teste de artigo",
         },
 
@@ -211,18 +211,37 @@ export const categories = [
 
     
 ].map(category => {
-    //posts vindos do arquivo posts.js que tenham categorySlug igual ao slug da categoria
-    const postsFromPostsJS = posts.filter(post => post.categorySlug === category.slug);
+    // Posts vindos do arquivo posts.js que tenham categorySlug igual ao slug da categoria
+    const postsFromPostsJS = posts
+        .filter(post => post.categorySlug === category.slug)
+        .map(post => ({
+            // Garante a estrutura correta com todos os campos necessários
+            id: post.id,
+            title: post.title,
+            slug: post.slug,
+            image: post.image || null, // Garante que não seja string vazia
+            summary: post.summary,
+            date: post.date,
+            content: post.content,
+            // Adiciona outros campos padrão que podem estar faltando
+            categorySlug: post.categorySlug
+        }));
+
     const existingPosts = category.posts || [];
 
-    //juntar sem duplicar (baseado em 'slug' quando disponível)
+    // Juntar sem duplicar (baseado em 'slug')
     const merged = [
         ...existingPosts,
-        ...postsFromPostsJS.filter(p => !existingPosts.some(e => e.slug === p.slug))
+        ...postsFromPostsJS.filter(p => 
+            !existingPosts.some(e => e.slug === p.slug)
+        )
     ];
 
     return {
         ...category,
-        posts: merged
+        posts: merged.map(post => ({
+            ...post,
+            image: post.image || null // Garante novamente que não haja string vazia
+        }))
     };
 });

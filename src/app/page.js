@@ -2,7 +2,7 @@
 import PostCard from "./components/PostCard.js";
 import { posts } from "./data/posts.js";
 import Sidebar from "./components/Sidebar.js";
-import Pagination from "./components/Pagination.js";
+import OthersCategoriesHome from "./components/OtherCategoriesHome.jsx";
 import AllCategories from "./components/AllCategories.jsx";
 import { useState } from "react";
 import Image from "next/image.js";
@@ -106,7 +106,7 @@ export default function Home() {
           </div>
 
           <div className="block  mt-8 mb-4 text-xl">
-              <AllCategories />
+              <OthersCategoriesHome />
           </div>    
 
          

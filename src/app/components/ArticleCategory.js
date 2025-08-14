@@ -21,7 +21,7 @@ export default function ArticleCategory({
 
     return (
 
-        <motion.div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-4 overflow-x-hidden" initial="hidden" animate="visible" variants={{
+        <motion.div className="w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-16 overflow-x-hidden" initial="hidden" animate="visible" variants={{
             hidden: {
                 scale: .8,
                 opacity: 0
@@ -39,16 +39,20 @@ export default function ArticleCategory({
                 <h1 className="text-3xl font-bold mb-2">{title}</h1>
                 <p className="text-sm text-gray-500 mb-4">{date}</p>
 
-                {image && (
+                {image ? (
                     <Image
                         src={image}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
                         className="rounded mb-4 shadow w-full h-auto max-w-full"
                         />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
                 <div className="flex justify-center">
                     <p className="text-sm text-gray-700 mb-4" >
@@ -60,16 +64,20 @@ export default function ArticleCategory({
                     {content}
                 </div>
 
-                {image && (
+                {image ? (
                     <Image
                         src={image2}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">
@@ -83,16 +91,20 @@ export default function ArticleCategory({
                 </div>
 
 
-                   {image && (
+                   {image ? (
                     <Image
                         src={image3}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">
@@ -106,16 +118,20 @@ export default function ArticleCategory({
                 </div>
 
 
-                 {image && (
+                 {image ? (
                     <Image
                         src={image4}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">
@@ -130,16 +146,20 @@ export default function ArticleCategory({
 
 
 
-                {image && (
+                {image ? (
                     <Image
                         src={image5}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">
@@ -153,16 +173,20 @@ export default function ArticleCategory({
                 </div>
 
 
-                 {image && (
+                 {image ? (
                     <Image
                         src={image6}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">
@@ -177,16 +201,20 @@ export default function ArticleCategory({
 
 
 
-                   {image && (
+                   {image ? (
                     <Image
                         src={image7}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">
@@ -201,16 +229,20 @@ export default function ArticleCategory({
 
 
 
-                  {image && (
+                  {image ? (
                     <Image
                         src={image8}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
-                       
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">
@@ -225,16 +257,20 @@ export default function ArticleCategory({
 
 
 
-                  {image && (
+                  {image ? (
                     <Image
                         src={image9}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">
@@ -249,16 +285,20 @@ export default function ArticleCategory({
 
 
 
-                {image && (
+                {image ? (
                     <Image
                         src={image10}
-                        alt={title}
+                        alt={title || "Imagem do Artigo"}
                         width={800}
                         height={500}
                         priority
                         
-                        className="rounded mb-6 shadow w-full h-auto max-w-full"
-                    />
+                        className="rounded mb-4 shadow w-full h-auto max-w-full"
+                        />
+                ) : ( 
+                    <div className="mb-8 bg-gray-200 dark:bg-gray-700 h-64 rounded-lg flex items-center justify-center">
+                        <span className="text-gray-500">Sem imagem disponível</span>
+                    </div>
                 )}
 
                 <div className="flex justify-center">

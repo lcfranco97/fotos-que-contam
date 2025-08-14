@@ -1,4 +1,4 @@
-import Article from "@/app/components/Article";
+import Article from "@/app/components/ArticleTeste";
 import { posts } from "@/app/data/posts";
 
 export async function generateStaticParams() {

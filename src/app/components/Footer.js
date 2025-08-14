@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className="">
 
-            <div className="hidden w-full md:flex items-center justify-around bg-black py-40">
+            <div className="hidden w-full md:flex items-center justify-around bg-black dark:bg-gray-950 py-40">
 
                 <div className="px-10">
                     <Link href="/">
