@@ -29,7 +29,7 @@ export default function Article({
         visible: { scale: 1, opacity: 1, transition: { delay: 0.4 } }
       }}
     >
-      <article className="max-w-3xl mx-auto p-4">
+      <article className="max-w-3xl ">
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
         {summary && <h3 className="text-md mb-4 dark:text-gray-300">{summary}</h3>}
         {date && <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">{date}</p>}

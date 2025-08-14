@@ -34,7 +34,7 @@ export default function ArticlePage({ params }) {
   };
 
   return (
-    <div className="max-w-6xl mx-auto  space-y-8">
+    <div className="max-w-6xl mx-auto space-y-8">
       <Article {...articleData} />
       <div className="md:px-10 lg:px-40">
         <AllCategories currentCategorySlug={slug} />
