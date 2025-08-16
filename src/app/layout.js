@@ -36,6 +36,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Fotos que Contam" />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} antialiased bg-gray-100 dark:bg-black transition-colors duration-200`}
       >

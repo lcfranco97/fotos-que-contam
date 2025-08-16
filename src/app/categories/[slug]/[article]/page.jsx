@@ -1,9 +1,14 @@
+'use client'
+
 import AllCategories from "@/app/components/AllCategories";
 import Article from "@/app/components/ArticleTeste";
 import { categories } from "@/app/data/categories.js";
+import ShareButtons from "@/app/components/ShareButtons";
+import { use } from "react";
 
 export default function ArticlePage({ params }) {
-  const { slug, article } = params;
+   // Desempacota os params
+  const { slug, article } = use(params);
   
    // Encontra a categoria atual
   const category = categories.find(cat => cat.slug === slug);
@@ -33,13 +38,26 @@ export default function ArticlePage({ params }) {
     ].filter(Boolean)
   };
 
+   // URL completa para compartilhamento
+  const shareUrl = `https://fotos-que-contam.vercel.app/categories/${slug}/${article}`;
+
   return (
-    <div className="max-w-6xl mx-auto space-y-8">
+     <div className="max-w-6xl mx-auto space-y-8">
       <Article {...articleData} />
-      <div className="md:px-10 lg:px-40">
-        <AllCategories currentCategorySlug={slug} />
+      
+      {/* Adicione o componente ShareButtons aqui */}
+      <div className="">
+        <ShareButtons 
+          url={shareUrl}
+          title={post.title}
+          description={post.content?.substring(0, 100)} // Pega os primeiros 100 caracteres do conteúdo
+          imageUrl={post.image}
+        />
       </div>
       
+      <div className="">
+        <AllCategories currentCategorySlug={slug} />
+      </div>
     </div>
   );
 }

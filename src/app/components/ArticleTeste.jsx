@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import AllCategories from "./AllCategories";
+import ShareButtons from "./ShareButtons";
 
 export default function Article({ 
   // Campos básicos
@@ -21,7 +22,7 @@ export default function Article({
 
   return (
     <motion.div 
-      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-26"
+      className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 flex flex-col md:flex-row mt-26"
       initial="hidden" 
       animate="visible"
       variants={{
@@ -33,6 +34,7 @@ export default function Article({
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
         {summary && <h3 className="text-md mb-4 dark:text-gray-300">{summary}</h3>}
         {date && <p className="text-sm text-gray-700 dark:text-gray-400 mb-4">{date}</p>}
+        
 
         {/* Renderização para artigo simples */}
         {!isComplexArticle && (
